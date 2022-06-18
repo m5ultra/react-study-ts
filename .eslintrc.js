@@ -27,5 +27,10 @@ module.exports = {
     'object-curly-newline': 0,
     'import/extensions': 0,
     'import/no-unresolved': 0,
+    'react/function-component-definition': 0, // 必须是函数声明
+    'react/react-in-jsx-scope': 0, // 必须引入React
+    'operator-linebreak': 0,
+    'react/jsx-curly-brace-presence': 0,
+    'arrow-body-style': 0,
   },
 }
