@@ -1,5 +1,24 @@
-import { Button } from 'antd'
+import { Button, Tooltip } from 'antd'
+import { SearchOutlined } from '@ant-design/icons'
 
-const Btns = () => <Button>基本按钮使用</Button>
+const Btns = () => (
+  <div style={{ padding: '30px 20px' }}>
+    <Button type={'primary'}>Primary Button</Button>
+    <Button>Default Button</Button>
+    <Button type={'dashed'}>Dashed</Button>
+    <Button type={'text'}>Text Button</Button>
+    <Button type={'link'}>Text Link</Button>
+    <hr />
+    <Tooltip title={'Search'}>
+      <Button type="primary" shape="circle" icon={<SearchOutlined />} />
+    </Tooltip>
+    <Button type="primary" shape="circle">
+      A
+    </Button>
+    <Button type="primary" icon={<SearchOutlined />}>
+      Search
+    </Button>
+  </div>
+)
 
 export default Btns

@@ -27,7 +27,8 @@ const items: MenuProps['items'] = [
   getItem('通用', '通用组建', <HeatMapOutlined />, [
     getItem('Button 按钮', '按钮组建', null),
     getItem('Icon 图标', 'Icon 图标', null),
-    getItem('Typography排版', 'Typography排版', null),
+    getItem('表单', '表单元素', null),
+    getItem('国际化', 'i18n', null),
   ]),
 ]
 
@@ -37,16 +38,17 @@ const Root: React.FC = () => {
     const { key } = e
     switch (key) {
       case '按钮组建':
-        console.log(1)
         navigate('/', { replace: true })
 
         break
       case 'Icon 图标':
-        console.log(2)
-        navigate('/Icons', { replace: true })
+        navigate('/Icons')
         break
-      case 'Typography排版':
-        console.log(3)
+      case '表单元素':
+        navigate('/Forms')
+        break
+      case 'i18n':
+        navigate('/i18n')
         break
       default:
         break

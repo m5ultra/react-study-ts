@@ -32,5 +32,10 @@ module.exports = {
     'operator-linebreak': 0,
     'react/jsx-curly-brace-presence': 0,
     'arrow-body-style': 0,
+    'max-len': 0,
+    'react/jsx-props-no-spreading': 0,
+    indent: 0,
+    'import/no-extraneous-dependencies': 0,
+    'react/jsx-no-useless-fragment': 0,
   },
 }

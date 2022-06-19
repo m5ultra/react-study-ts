@@ -1,3 +1,4 @@
+const { DefinePlugin } = require('webpack')
 const CracoLessPlugin = require('craco-less')
 
 module.exports = {
@@ -29,4 +30,14 @@ module.exports = {
       },
     },
   ],
+  webpack: {
+    plugins: [
+      new DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      }),
+    ],
+  },
+  devServer: {
+    port: 6688,
+  },
 }

@@ -1,0 +1,7 @@
+{
+  "description": {
+    "part1": "Hello world, Cn",
+    "part2": "Hello world, Cn, I'm Learn React"
+  },
+  "counter": "Changed language already {{count}} times"
+}
