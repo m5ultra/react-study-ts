@@ -266,3 +266,11 @@ function I18n() {
 
 export default I18n
 ```
+
+### Step 5.0 通过下面方法获取当前的语言 做个映射
+
+```tsx
+const i18nextLng = localStorage.getItem('i18nextLng')
+console.log(i18nextLng, '01-i18nextLng')
+```
+

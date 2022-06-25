@@ -10,6 +10,16 @@ import I18n from '../pages/04.i18n'
 
 const i18nextLng = localStorage.getItem('i18nextLng')
 console.log(i18nextLng, '01-i18nextLng')
+
+// eslint-disable-next-line no-shadow
+enum Lngs {
+  en = 'en_US',
+  tw = 'zh_TW',
+  zh = 'zh_CN',
+  de = 'de_DE',
+}
+
+console.log(Lngs[i18nextLng], Lngs, '当前语言映射')
 const Navs = () => (
   <ConfigProvider locale={zhCN}>
     <BrowserRouter>
