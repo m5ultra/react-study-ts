@@ -10,7 +10,6 @@ type Props = OwnProps
 
 const ProtectedRoute: FC<Props> = ({ children }) => {
   const { isLogin } = useContext(ctx)
-  console.log(isLogin, 'isLogin')
   if (isLogin) {
     return children
   }

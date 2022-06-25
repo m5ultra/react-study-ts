@@ -1,5 +1,5 @@
 {
-  "name": "react-pc-01",
+  "name": "react-study-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,6 +16,7 @@
     "@types/react-dom": "^18.0.5",
     "antd": "^4.21.3",
     "craco-less": "^2.0.0",
+    "cross-env": "^7.0.3",
     "husky": "^8.0.1",
     "i18next": "^21.8.10",
     "i18next-browser-languagedetector": "^6.1.4",
@@ -30,8 +31,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
+    "start": "cross-env NODE_ENV=development craco start",
+    "build": "cross-env NODE_ENV=production craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "lint": "eslint --fix",

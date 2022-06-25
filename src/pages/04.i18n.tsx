@@ -53,6 +53,10 @@ function I18n() {
               type="submit"
               onClick={() => {
                 setCount(count + 1)
+                // eslint-disable-next-line no-restricted-globals
+                location.reload()
+                // eslint-disable-next-line no-debugger
+                debugger
                 return i18n.changeLanguage(lng)
               }}
             >

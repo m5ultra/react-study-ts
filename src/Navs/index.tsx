@@ -1,7 +1,10 @@
 import { StrictMode } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ConfigProvider } from 'antd'
-import zhCN from 'antd/lib/locale/zh_TW'
+import zhTW from 'antd/lib/locale/zh_TW'
+import enUS from 'antd/lib/locale/en_US'
+import zhCN from 'antd/lib/locale/zh_CN'
+import deDE from 'antd/lib/locale/de_DE'
 import Root from '../pages/Root/Root'
 import Btns from '../pages/01.Btns'
 import Icons from '../pages/02.Icons'
@@ -13,19 +16,25 @@ import AuthProvider from '@/auth/AuthProvider'
 import ProtectedRoute from '@/auth/ProtectedRoute'
 
 const i18nextLng = localStorage.getItem('i18nextLng')
-console.log(i18nextLng, '01-i18nextLng')
 
 // eslint-disable-next-line no-shadow
 enum Lngs {
-  en = 'en_US',
-  tw = 'zh_TW',
-  zh = 'zh_CN',
-  de = 'de_DE',
+  en = 'en',
+  tw = 'tw',
+  cn = 'cn',
+  de = 'de',
 }
 
-console.log(Lngs[i18nextLng], Lngs, '当前语言映射')
+// eslint-disable-next-line consistent-return
+const lng = () => {
+  if (i18nextLng === Lngs.en) return enUS
+  if (i18nextLng === Lngs.de) return deDE
+  if (i18nextLng === Lngs.cn) return zhCN
+  if (i18nextLng === Lngs.tw) return zhTW
+}
+
 const Navs = () => (
-  <ConfigProvider locale={zhCN}>
+  <ConfigProvider locale={lng()}>
     <BrowserRouter>
       <AuthProvider>
         <Routes>

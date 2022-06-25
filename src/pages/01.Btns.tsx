@@ -2,8 +2,6 @@ import { Button, Tooltip } from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
 import { test } from 'utils'
 
-console.log(test(), '西湖美景， 六月天那')
-
 const Btns = () => (
   <div style={{ padding: '30px 20px' }}>
     <Button type={'primary'}>Primary Button</Button>

@@ -271,7 +271,6 @@ export default I18n
 
 ```tsx
 const i18nextLng = localStorage.getItem('i18nextLng')
-console.log(i18nextLng, '01-i18nextLng')
 
 // eslint-disable-next-line no-shadow
 enum Lngs {
