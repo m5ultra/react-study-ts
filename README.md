@@ -267,10 +267,20 @@ function I18n() {
 export default I18n
 ```
 
-### Step 5.0 通过下面方法获取当前的语言 做个映射
+### Step 5.0 通过下面方法获取当前的语言 做个映射 方便引入对应 antd语言
 
 ```tsx
 const i18nextLng = localStorage.getItem('i18nextLng')
 console.log(i18nextLng, '01-i18nextLng')
+
+// eslint-disable-next-line no-shadow
+enum Lngs {
+  en = 'en_US',
+  tw = 'zh_TW',
+  zh = 'zh_CN',
+  de = 'de_DE',
+}
+
+console.log(Lngs[i18nextLng], Lngs, '当前语言映射')
 ```
 
