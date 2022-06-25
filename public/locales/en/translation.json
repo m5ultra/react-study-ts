@@ -3,5 +3,8 @@
     "part1": "Hello world, En",
     "part2": "Hello world, En, I'm Learn React"
   },
-  "counter": "Changed language already {{count}} times"
+  "counter": "Changed language already {{count}} times",
+    "footer": {
+      "date": "Today is {{date, DATE_HUGE}}"
+    }
 }

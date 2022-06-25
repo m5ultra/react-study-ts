@@ -2,6 +2,21 @@ import { Space } from 'antd'
 import { useTranslation, Trans } from 'react-i18next'
 import { useState } from 'react'
 
+// eslint-disable-next-line no-undef
+const getGreetingTime = (d = new Date()) => {
+  const splitAfternoon = 12 // 24hr time to split the afternoon
+  const splitEvening = 17 // 24hr time to split the evening
+  const currentHour = parseFloat(String(d.getHours()))
+
+  if (currentHour >= splitAfternoon && currentHour <= splitEvening) {
+    return 'afternoon'
+  }
+  if (currentHour >= splitEvening) {
+    return 'evening'
+  }
+  return 'morning'
+}
+
 const lngs = {
   // en_US: { nativeName: 'English' },
   // de_DE: { nativeName: 'Deutsch' },
@@ -9,8 +24,8 @@ const lngs = {
   // zh_TW: { nativeName: 'China' },
   en: { nativeName: 'English' },
   de: { nativeName: 'Deutsch' },
-  cn: { nativeName: 'China' },
-  tw: { nativeName: 'China' },
+  cn: { nativeName: 'China-CN' },
+  tw: { nativeName: 'China-TW' },
 }
 function I18n() {
   const { t, i18n } = useTranslation()
@@ -50,6 +65,14 @@ function I18n() {
         <p>
           <i>{t('counter', { count })}</i>
         </p>
+        <hr />
+        <div>{t('footer.date', { date: new Date() })}</div>
+        <hr />
+        <div className="Footer">
+          <div>
+            {t('footer.date', { date: new Date(), context: getGreetingTime() })}
+          </div>
+        </div>
       </div>
     </div>
   )
