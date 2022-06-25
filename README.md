@@ -300,9 +300,9 @@ console.log(Lngs[i18nextLng], Lngs, '当前语言映射')
 
 ### Step 02. craco.config.js 增加如下配置 相信配置请查阅： https://www.npmjs.com/package/@craco/craco
 
-```js
+```
   webpack: {
-   // ...
+   ...
     alias: {
       '@': resolve(__dirname, './src'),
       utils: resolve(__dirname, './src/utils')
