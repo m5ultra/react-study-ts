@@ -8,6 +8,9 @@ import Icons from '../pages/02.Icons'
 import Forms from '../pages/03.Forms'
 import I18n from '../pages/04.i18n'
 import NotFound from '@/pages/404/notFound'
+import Login from '@/pages/Login'
+import AuthProvider from '@/auth/AuthProvider'
+import ProtectedRoute from '@/auth/ProtectedRoute'
 
 const i18nextLng = localStorage.getItem('i18nextLng')
 console.log(i18nextLng, '01-i18nextLng')
@@ -24,15 +27,25 @@ console.log(Lngs[i18nextLng], Lngs, '当前语言映射')
 const Navs = () => (
   <ConfigProvider locale={zhCN}>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Root />}>
-          <Route path={'Icons'} element={<Icons />} />
-          <Route index element={<Btns />} />
-          <Route path={'Forms'} element={<Forms />} />
-          <Route path={'i18n'} element={<I18n />} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Root />}>
+            <Route
+              path={'Icons'}
+              element={
+                <ProtectedRoute>
+                  <Icons />
+                </ProtectedRoute>
+              }
+            />
+            <Route index element={<Btns />} />
+            <Route path={'Forms'} element={<Forms />} />
+            <Route path={'i18n'} element={<I18n />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   </ConfigProvider>
 )
