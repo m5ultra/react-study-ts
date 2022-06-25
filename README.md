@@ -267,7 +267,7 @@ function I18n() {
 export default I18n
 ```
 
-### Step 5.0 通过下面方法获取当前的语言 做个映射 方便引入对应 antd语言
+### Step 5.0 通过下面方法获取当前的语言 做个映射 方便引入对应 antd 语言
 
 ```tsx
 const i18nextLng = localStorage.getItem('i18nextLng')
@@ -284,3 +284,28 @@ enum Lngs {
 console.log(Lngs[i18nextLng], Lngs, '当前语言映射')
 ```
 
+## 配置路径别名
+
+### Step 01. tsconfig.json 增加如下代码
+
+```json
+{
+  "baseUrl": "./",
+  "paths": {
+    "@/*": ["src/*"],
+    "utils": ["src/utils/"]
+  }
+}
+```
+
+### Step 02. craco.config.js 增加如下配置 相信配置请查阅： https://www.npmjs.com/package/@craco/craco
+
+```js
+  webpack: {
+   // ...
+    alias: {
+      '@': resolve(__dirname, './src'),
+      utils: resolve(__dirname, './src/utils')
+    }
+  }
+```
