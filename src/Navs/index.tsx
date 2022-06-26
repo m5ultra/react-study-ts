@@ -10,6 +10,7 @@ import Btns from '../pages/01.Btns'
 import Icons from '../pages/02.Icons'
 import Forms from '../pages/03.Forms'
 import I18n from '../pages/04.i18n'
+import UseMobx from '../pages/05.mobx'
 import NotFound from '@/pages/404/notFound'
 import Login from '@/pages/Login'
 import AuthProvider from '@/auth/AuthProvider'
@@ -50,6 +51,7 @@ const Navs = () => (
             <Route index element={<Btns />} />
             <Route path={'Forms'} element={<Forms />} />
             <Route path={'i18n'} element={<I18n />} />
+            <Route path={'mobx'} element={<UseMobx />} />
           </Route>
           <Route path="*" element={<NotFound />} />
           <Route path="/login" element={<Login />} />

@@ -29,6 +29,7 @@ const items: MenuProps['items'] = [
     getItem('Icon 图标', 'Icon 图标', null),
     getItem('表单', '表单元素', null),
     getItem('国际化', 'i18n', null),
+    getItem('useMobx', 'useMobx', null),
   ]),
 ]
 
@@ -49,6 +50,9 @@ const Root: React.FC = () => {
         break
       case 'i18n':
         navigate('/i18n')
+        break
+      case 'useMobx':
+        navigate('/mobx')
         break
       default:
         break

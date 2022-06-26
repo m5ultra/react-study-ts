@@ -40,6 +40,7 @@ module.exports = {
     alias: {
       '@': resolve(__dirname, './src'),
       utils: resolve(__dirname, './src/utils'),
+      store: resolve(__dirname, './src/store'),
     },
   },
   devServer: {

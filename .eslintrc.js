@@ -39,5 +39,6 @@ module.exports = {
     'react/jsx-no-useless-fragment': 0,
     'react/jsx-no-constructed-context-values': 0,
     'react/jsx-wrap-multilines': 0,
+    'no-debugger': 1,
   },
 }
