@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, lazy } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ConfigProvider } from 'antd'
 import zhTW from 'antd/lib/locale/zh_TW'
@@ -12,10 +12,12 @@ import Forms from '../pages/03.Forms'
 import I18n from '../pages/04.i18n'
 import UseMobx from '../pages/05.mobx'
 import NotFound from '@/pages/404/notFound'
-import Login from '@/pages/Login'
+// import Login from '@/pages/Login'
 import AuthProvider from '@/auth/AuthProvider'
 import ProtectedRoute from '@/auth/ProtectedRoute'
 
+// React路由懒加载
+const Login = lazy(() => import('@/pages/Login'))
 const i18nextLng = localStorage.getItem('i18nextLng')
 
 // eslint-disable-next-line no-shadow
