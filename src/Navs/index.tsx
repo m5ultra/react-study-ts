@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ConfigProvider } from 'antd'
 import zhTW from 'antd/lib/locale/zh_TW'
 import enUS from 'antd/lib/locale/en_US'
@@ -36,7 +36,7 @@ const lng = () => {
 
 const Navs = () => (
   <ConfigProvider locale={lng()}>
-    <BrowserRouter>
+    <Router>
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Root />}>
@@ -57,7 +57,7 @@ const Navs = () => (
           <Route path="/login" element={<Login />} />
         </Routes>
       </AuthProvider>
-    </BrowserRouter>
+    </Router>
   </ConfigProvider>
 )
 const vm =
